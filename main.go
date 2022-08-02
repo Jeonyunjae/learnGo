@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	"name/accounts"
+	"name/mydict"
 )
 
 func main() {
-	account := accounts.NewAccount("yunjae")
-	account.Deposit(10)
-	err := account.Withdraw(20)
+	dictionary := mydict.Dictionary{"first": "First word"}
+	definition, err := dictionary.Search("first")
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println((definition))
 	}
-	fmt.Println(account.String())
 }
